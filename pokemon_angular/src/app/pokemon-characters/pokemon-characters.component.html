@@ -1,3 +1,7 @@
 <p>pokemon-characters works!</p>
 
-<div (click)="getPokemoncharactersAPI()">
+<div class="col text-center pokemon" *ngFor="let pokemon of pokemon_name ; let i=index ">
+  <a href="/profile?name={{pokemon}}"  class="poke-char">{{i+1}} : {{pokemon}}</a>
+</div>
+
+<button>{{next_api}}</button>
