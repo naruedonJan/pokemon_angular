@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-characters',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonCharactersComponent implements OnInit {
 
-  constructor() { }
+  constructor( private http:HttpClient , private router:Router ) { }
 
   ngOnInit(): void {
   }
 
+  getPokemoncharactersAPI(){
+    this.http.get("https://pokeapi.co/api/v2/pokemon/bulbasaur"). subscribe( data => {
+      console.log(data)
+    })
+  }
 }
